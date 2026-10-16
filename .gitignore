@@ -1,0 +1,6 @@
+# mypy
+.mypy_cache/
+
+# Python bytecode cache
+__pycache__/
+*.py[cod]
