@@ -15,15 +15,17 @@ def main() -> None:
     except OSError as e:
         print(f"Error opening file '{args[1]}': {e}")
         return
-
-    text: str = file.read()
-    print("---")
-    print()
-    print(text)
-
-    print("---")
-    file.close()
-    print(f"File '{args[1]}' closed.")
+    try:
+        text: str = file.read()
+        print("---")
+        print()
+        print(text)
+        print("---")
+    except (UnicodeDecodeError, OSError) as e:
+        print(f"Error reading file '{args[1]}': {e}")
+    finally:
+        file.close()
+        print(f"File '{args[1]}' closed.")
 
 
 if __name__ == "__main__":
