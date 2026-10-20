@@ -61,6 +61,6 @@ if __name__ == "__main__":
     try:
         main()
     except KeyboardInterrupt:
-        print("\nCtrl+C → Interrupted by user.")
-    except EOFError:
-        print("\nCtrl+D → No input received. Not saving data.")
+        print("\nKeyboardInterrupt")
+    except EOFError as e:
+        print(f"\nEOFError: {e}")
