@@ -32,12 +32,9 @@ def main() -> None:
     print("---")
     print()
     new_text = ""
-    for c in text:
-        if c == "\n":
-            new_text = new_text + "#\n"
-        else:
-            new_text = new_text + c
-    print(f"{new_text}")
+    for line in text.splitlines():
+        new_text = new_text + line + "#\n"
+    print(new_text)
     print("---")
     enter_new_file = input("Enter new file name (or empty): ")
     if enter_new_file == "":
